@@ -21,6 +21,10 @@ this._capacidade = capacidade;
 		this._capacidade = value;
 	}
 
+    public visualizar( ): void{
+        console.log( `capacidade ${this._capacidade}`)
+    }
+
 }
 
 
