@@ -1,4 +1,4 @@
-import { Transporte} from "./Transporte"
+import { Transporte} from "./TransporteH"
 
 export class Terrestre extends Transporte{
 

@@ -1,6 +1,6 @@
-import { Automovel } from './Automovel';
-import { Terrestre } from './Terrestre';
-import { Transporte } from './Transporte';
+import { Automovel } from './AutomovelH';
+import { Terrestre } from './TerrestreH';
+import { Transporte } from './TransporteH';
 
 let t1: Transporte = new Transporte(5);
 t1.capacidade = 4;
