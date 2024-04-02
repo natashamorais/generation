@@ -1,37 +1,38 @@
-const readline = require('readline-sync');
+﻿const leia = require('readline-sync');
 
-const matriz = [], elementosDiagonalPrincipal = [], elementosDiagonalSecundaria = [];
-let arrayTemp = [], somaElementosDiagonalPrincipal = 0, somaElementosDiagonalSecundaria = 0;
+let matriz = new Array(3);
 
-while (matriz.length < 3) {
-        if (arrayTemp.length < 3) {
-            let inputNumber = readline.questionInt("Digite um numero a ser guardado: ");
-            arrayTemp.push(inputNumber);
-
-        } else {
-            matriz.push(arrayTemp)
-            arrayTemp = [];
-        }
+for(let indice = 0; indice < matriz.length; indice ++){
+    matriz[indice] = Array(3);
 }
 
-let count = matriz.length - 1;
+let diagonalPrincipal = "", diagonalSecundaria = "";
+let somaDiagonalPrincipal = 0, somaDiagonalSecundaria = 0;
 
-for (let i = 0; i < matriz.length; i++) {
-    elementosDiagonalPrincipal.push(matriz[i][i]);
-    somaElementosDiagonalPrincipal += matriz[i][i]
+for (let indiceLinha = 0; indiceLinha < matriz.length; indiceLinha ++){
 
-    if (i > 0) {
-        elementosDiagonalSecundaria.push(matriz[i][count])
-        somaElementosDiagonalSecundaria += matriz[i][count]
-        count--;
-    } else {
-        elementosDiagonalSecundaria.push(matriz[i][count])
-        somaElementosDiagonalSecundaria += matriz[i][count]
-        count--;
+    for (let indiceColuna = 0; indiceColuna < matriz.length; indiceColuna ++){
+    
+        matriz[indiceLinha][indiceColuna] = leia.questionInt("Digite um numero inteiro: ");
+
     }
+
+}
+console.table(matriz);
+
+/** Os Elementos da Diagonal Principal*/
+for (let indice = 0; indice < matriz.length; indice ++){
+    diagonalPrincipal += matriz[indice][indice] + " ";
+    somaDiagonalPrincipal += matriz[indice][indice];
 }
 
-console.log(`Elementos da diagonal principal: ${elementosDiagonalPrincipal}
-Elementos da diagonal secundaria: ${elementosDiagonalSecundaria}
-Soma dos elementos da diagonal principal: ${somaElementosDiagonalPrincipal}
-Soma dos elementos da diagonal secundaria: ${somaElementosDiagonalSecundaria}`)
+/** Os Elementos da Diagonal Secundária*/
+for (let indice = 0; indice < matriz.length; indice ++){
+    diagonalSecundaria += matriz[indice][matriz.length - 1 - indice] + " ";
+    somaDiagonalSecundaria += matriz[indice][matriz.length - 1 - indice];
+}
+
+console.log(`Elementos da Diagonal Principal: ${diagonalPrincipal}`);
+console.log(`A Soma dos elementos da Diagonal Principal é: ${somaDiagonalPrincipal}`);
+console.log(`Elementos da Diagonal Secundária: ${diagonalSecundaria}`);
+console.log(`A Soma dos elementos da Diagonal Secundária é: ${somaDiagonalSecundaria}`);

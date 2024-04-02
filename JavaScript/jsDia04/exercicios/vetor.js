@@ -1,13 +1,13 @@
 const readline = require('readline-sync');
 
-const array = [2, 5, 1, 3, 4, 9, 7, 8, 10, 6];
+const vetor = [2,5,1,3,4,9,7,8,10,6];
 
-const number = readline.questionInt('Digite o numero que voce deseja encontar: ');
+let num = readline.questionInt(" Digite o número que você deseja encontrar:  ")
 
-for (let i = 0; i <= array.length; i++) {
-    if (array[i] === number) {
-        console.log(`O Número ${number} está localizado na posição: ${i}`)
-    } else if (i === array.length) {
-        console.log(`O número ${number} não foi encontrado!`)
+for( let i = 0; i <= vetor.length; i++){
+    if(vetor[i] == num){
+        console.log(`o número ${num} está na posição ${i}`)
+    } else if( i >= vetor.length){
+        console.log(`o número ${num} não foi encontrado!`)
     }
 }

@@ -1,14 +1,14 @@
 const readline = require('readline-sync');
 
-var positiveNumbers = 0;
+let numerosPositivos = 0;
+let num = 0;
 
-do {
-    var number = readline.questionInt("Digite um numero: ");
+do{
+    num = readline.questionInt( "digite um numero:")
 
-    if (number > 0 && number !== 0) {
-        positiveNumbers += number;
-    }
+    if (num > 0 && num !==0)
+    numerosPositivos += num
+    
+}while(num !==0 )
 
-} while (number !== 0);
-
-console.log(`A Soma dos números positivos é: ${positiveNumbers}`);
+console.log( ` A soma dos números positivos é ${numerosPositivos}`)

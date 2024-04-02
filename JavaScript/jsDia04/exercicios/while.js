@@ -1,20 +1,23 @@
 const readline = require('readline-sync');
 
-let menorDe21 = 0;
-let maiorDe50 = 0;
-let boleano = true;
+let booleano = true;
+let maisQue50 = 0;
+let menosQue21 = 0;
 
-while (boleano) {
-    let idade = readline.question(`Digite uma idade: `);
+while(booleano){
 
-    if (idade < 0) {
-        boleano = false;
-    } else if (idade < 21 && idade > 0) {
-        menorDe21++;
-    } else if (idade > 50) {
-        maiorDe50++;
+    let idade = readline.questionInt("digite uma idade:")
+
+    if(idade<0){
+        booleano = false;
+    }
+    if(idade > 50){
+    maisQue50++
+    } else if(idade <21 && idade >0){
+        menosQue21++
+
     }
 }
 
-console.log(`\nTotal de pessoas menores de 21 anos: ${menorDe21}`);
-console.log(`\nTotal de pessoas maiores de 50 anos: ${maiorDe50}`);
+console.log(`pessoas menores de 21 anos:${menosQue21}`)
+console.log(`pessoas maiores de 80 anos: ${maisQue50}`)
